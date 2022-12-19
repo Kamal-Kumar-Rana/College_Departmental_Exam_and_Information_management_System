@@ -1,0 +1,93 @@
+﻿#footer {
+    position: relative;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    min-height: 500px;
+    background-color: #333;
+    color: #fff;
+    user-select: none;
+}
+
+#footer .info {
+    width: 40%;
+    height: 330px;
+    float: left;
+    text-align: justify;
+    padding: 20px 20px 20px 50px;
+    position: relative;
+}
+
+#footer .info .banner {
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#footer .info p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#footer .contact {
+    position: absolute;
+    width: 100% auto;
+    bottom: 20px;
+    text-align: left;
+    font-size: 18px;
+    user-select: text;
+}
+
+#footer .contact .mobile {
+    margin-bottom: 15px;
+}
+
+#footer .contact i {
+    margin-right: 8px;
+}
+
+#footer .links {
+    float: left;
+    width: 30%;
+    height: 330px;
+    padding: 20px;
+}
+
+#footer .links .a {
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+}
+
+#footer .links a {
+    color: #eee;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
+}
+
+#footer .links i {
+    margin-right: 8px;
+}
+
+#footer .links a:hover {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
