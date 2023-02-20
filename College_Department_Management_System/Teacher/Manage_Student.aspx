@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="CSS/Dashboard.css" rel="stylesheet" type="text/css" />
     <link href="CSS/Candidates.css" rel="stylesheet" type="text/css" />
+    <link href="../Global/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <%
         string path = HttpContext.Current.Server.MapPath("Link.txt");
         string content = System.IO.File.ReadAllText(path);
@@ -61,6 +62,7 @@
                             </div>
                              <div class="input-box">
                                 <asp:TextBox ID="txtStudentId" class="input" type="text" autocomplete="off" runat="server" required MaxLength="10"></asp:TextBox>
+
                                 <label for="txtStudentId" class="label-name">
                                     <span class="content-name">Student ID</span>
                                 </label>
@@ -148,8 +150,10 @@
                           
 
                             <div class="btnContainer">
-                                <asp:Button ID="btnRegister" runat="server" Text="Register" class="fas fa-user-plus"  onclick="btnRegister_Click" CssClass="btn"  />
-                                
+                               
+
+                                <asp:Button ID="btnRegister" Text="Register" class="fas fa-user-plus" 
+                                    CssClass="btn" runat="server" onclick="btnRegister_Click1" />
 
                                 <asp:LinkButton ID="linkCancel" CssClass="btn" runat="server" OnClientClick="return confirm('All unsaved data will be lost.')" 
                                     ><i class="fas fa-times-circle"></i>Cancel</asp:LinkButton>

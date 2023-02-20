@@ -26,7 +26,7 @@
     </ProgressTemplate></asp:UpdateProgress>
 
     <asp:UpdatePanel ID="pageUpdate" runat="server"><ContentTemplate>
-        <div id="logo" runat="server">Online Exam Management System</div>
+        <div id="logo" runat="server">Departmental Exam Management System</div>
         <div class="login-panel">
             <h1><i class="fas fa-user-shield"></i> ADMIN LOGIN</h1>
 
@@ -51,9 +51,9 @@
             </div>
             <asp:Button ID="btnLogin" CssClass="login-btn" runat="server" Text="LOGIN" 
                 onclick="btnLogin_Click" />
-            <div class="row">
+            <!--<div class="row">
                 <asp:LinkButton ID="linkForgotPassword" CssClass="link" runat="server">Password Recovery</asp:LinkButton>
-            </div>
+            </div>-->
         </div>
     </ContentTemplate></asp:UpdatePanel>
     </form>

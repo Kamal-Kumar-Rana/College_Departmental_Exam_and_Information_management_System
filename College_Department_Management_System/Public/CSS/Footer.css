@@ -10,8 +10,8 @@
 }
 
 #footer .info {
-    width: 40%;
-    height: 330px;
+    width: 20%;
+    height: 33px;
     float: left;
     text-align: justify;
     padding: 20px 20px 20px 50px;
@@ -52,6 +52,7 @@
     width: 30%;
     height: 330px;
     padding: 20px;
+    text-align: right;
 }
 
 #footer .links .a {

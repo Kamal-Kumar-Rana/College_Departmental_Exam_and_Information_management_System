@@ -1,12 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Dashboard.aspx.cs" Inherits="Admin_Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Manage_Exam.aspx.cs" Inherits="Admin_Exam_Paper" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Admin Panel | Dashboard</title>
+    <title>Admin Panel | Manage Exam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="CSS/Dashboard.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/Candidates.css" rel="stylesheet" type="text/css" />
+    <link href="../Global/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <%
         string path = HttpContext.Current.Server.MapPath("Link.txt");
         string content = System.IO.File.ReadAllText(path);
@@ -31,7 +33,8 @@
         </asp:UpdateProgress>
 
         <%
-            string headerpath = HttpContext.Current.Server.MapPath("Html/Header.htm");
+            string headerpath = HttpContext.Current.Server.MapPath("Html/Manage_Student.htm");
+           
             string headercontent = System.IO.File.ReadAllText(headerpath);
             Response.Write(headercontent);
         %>
@@ -48,7 +51,7 @@
                     </div>
                     <div class="status bottom">
                         <i class="fas fa-angle-double-right"></i>
-                        <asp:Label ID="status" runat="server" Text="Admin Panel / Dashboard"></asp:Label>
+                        <asp:Label ID="status" runat="server" Text="Admin Panel / Manage Exam"></asp:Label>
                     </div>
                     <div id="content">
                         
