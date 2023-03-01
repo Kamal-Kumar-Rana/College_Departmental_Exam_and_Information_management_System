@@ -7,6 +7,7 @@
     <title>Admin Panel | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="CSS/Dashboard.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/Dashboard_image.css" rel="stylesheet" type="text/css" />
     <link href="../Global/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <%
         string path = HttpContext.Current.Server.MapPath("Link.txt");
@@ -44,7 +45,9 @@
                         <i class="fas fa-user-shield"></i>
                         <asp:Label ID="Label1" class="lbl" runat="server" Text="Admin"></asp:Label>
                         <span class="info">
-                            <asp:Label ID="lblId" class="lbl" runat="server" Text="Id"></asp:Label> - <asp:Label ID="lblName" class="lbl" runat="server" Text="Name"></asp:Label>
+                            <asp:Label ID="lblId" class="lbl" runat="server" ></asp:Label>- 
+                            <asp:Label ID="lblName" class="lbl" runat="server" ></asp:Label>
+                            
                         </span>
                     </div>
                     <div class="status bottom">
@@ -52,26 +55,43 @@
                         <asp:Label ID="status" runat="server" Text="Admin Panel / Dashboard"></asp:Label>
                     </div>
                     <div id="content">
+                   
                         
                          <div id="info" class="window">
+                           
                             <div class="tab">
-                                <p>Current Active Student</p>
+                                <p>Total Student</p>
+                               
                                 <div class="content">
-                                    <i class="fas fa-rupee-sign"></i>
-                                    <asp:Label ID="lblBalance" runat="server" Text="0"></asp:Label>
+                                    
                                 </div>
                             </div>
-                            <div class="tab">
+                            
+                             <div class="tab">
                                 <p>Upcoming Exam</p>
+                                
                                 <div class="content">
-                                    <i class="fas fa-bell"></i>
-                                    <asp:Label ID="lblBank" runat="server" Text="0"></asp:Label>
+                                    
                                 </div>
                             </div>
-                      
 
-
+                           <div class="tab">
+                                <p>Previous Exam</p>
+                                
+                                <div class="content">
+                                    
+                                </div>
                             </div>
+
+                             <div class="tab">
+                                <p>Logout</p>
+                                <a href="Logout.aspx">Click Here</a>
+                                <div class="content">
+                                    
+                                </div>
+                            </div>
+
+                        </div>
 
                             
                         

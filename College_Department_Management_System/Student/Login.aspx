@@ -12,6 +12,7 @@
     <script src="JS/Login.js" type="text/javascript"></script>
 </head>
 <body>
+ 
     <form id="login" runat="server">
         <asp:ScriptManager ID="pageScript" runat="server">
         </asp:ScriptManager>
@@ -28,7 +29,7 @@
         </asp:UpdateProgress>
         <asp:UpdatePanel ID="pageUpdate" runat="server">
             <ContentTemplate>
-                <div id="logo" runat="server"> Candidate Login</div>
+                <div id="logo" runat="server"> Student Login</div>
                 <div class="login-panel">
                     <h1>Login Here</h1>
 
@@ -53,8 +54,11 @@
                    <asp:Button ID="btnLogin" CssClass="login-btn" runat="server" Text="LOGIN" 
                         onclick="btnLogin_Click"  />
                     <div class="row">
-                        
                        
+                        <asp:LinkButton ID="linkRegister" CssClass="link" runat="server" 
+                            onclick="linkRegister_Click" >Register Now</asp:LinkButton>
+                        <asp:LinkButton ID="linkForgotPassword" CssClass="link" runat="server" >Forgot Password?</asp:LinkButton>
+                  
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>

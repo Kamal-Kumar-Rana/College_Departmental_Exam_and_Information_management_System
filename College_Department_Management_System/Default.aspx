@@ -24,11 +24,11 @@
      <div id="header" runat="server">
             <div id="menu">
                 <ul>
-                    <li><a class="a" href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a class="a" href="#"><i class="fas fa-home"  ></i>Home</a></li>
                     <li><a class="a" href="#"><i class="fas fa-info-circle"></i>Dashboard</a></li>
-                    <li><a class="btnLogin" href="Teacher/Login.aspx"><i class="fas fa-user-plus"></i>HOD Login</a></li>
-                    <li><a class="btnLogin" href="Student/Login.aspx"><i class="fas fa-sign-in-alt"></i>Student Login</a></li>
-                    <li><a class="btnLogin" href="Teacher/Login.aspx"><i class="fas fa-user-plus"></i>Teachers Login</a></li>
+                    <li><a class="btnLogin" href="Teacher/Login.aspx" target="_blank"><i class="fas fa-user-plus"  ></i>HOD Login</a></li>
+                    <li><a class="btnLogin" href="Student/Login.aspx" target="_blank"><i class="fas fa-sign-in-alt" ></i>Student Login</a></li>
+                    <li><a class="btnLogin" href="Teacher/Login.aspx" target="_blank"><i class="fas fa-user-plus" ></i>Teachers Login</a></li>
 
                 </ul>
             </div>
@@ -57,8 +57,8 @@
         </div>
 
         <div class="col-md-3  pl-4 pr-4">
-          <div class="a"><a href="Admin/Login.aspx"><i class="fas fa-sign-in-alt"></i>Admin Login</a></div>
-                <div class="a"><a href="Public/About.aspx"><i class="fas fa-info-circle"></i>About</a></div>
+          <div class="a"><a href="Admin/Login.aspx" target="_blank"><i class="fas fa-sign-in-alt"></i>Admin Login</a></div>
+                <div class="a"><a href="Public/About.aspx" ><i class="fas fa-info-circle"></i>About</a></div>
                 <div class="a"><a href="Public/Contact.aspx"><i class="fas fa-link"></i>Contact</a></div>
                 <div class="a"><a href="#"><i class="far fa-question-circle"></i>FAQ</a></div>
                 <div class="a"><a href="#"><i class="fas fa-tasks"></i>Privacy Policy</a></div>

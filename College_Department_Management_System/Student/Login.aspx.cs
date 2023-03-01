@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
-
+using System.Configuration;
 public partial class User_Login : System.Web.UI.Page
 {
 string cs = GlobalClass.cs;
@@ -25,38 +25,55 @@ string cs = GlobalClass.cs;
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-
-
         Thread.Sleep(1500);
         string studentId = txtStudentId.Text.Trim();
         string password = txtPassword.Text.Trim();
-        if (studentId != "" && password != "")
+        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+        if (studentId != null && password != null)
         {
-            try
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(cs))
             {
-                if (GlobalClass.IsUserValid(studentId, password))
-                {
-                    DataTable dtUser = GlobalClass.LoadStudent(studentId);
-                    HttpCookie userInfo = new HttpCookie("TVUSCK");
-                    userInfo.Expires = DateTime.Now.AddDays(3);
-                    userInfo["xvhuqdph"] = dtUser.Rows[0]["UserId"].ToString().Trim();
-                    userInfo["qbttxpse"] = dtUser.Rows[0]["Password"].ToString().Trim();
-                    Response.Cookies.Add(userInfo);
-
-                    if (string.IsNullOrEmpty(Request.QueryString["Mode"]) || string.IsNullOrEmpty(Request.QueryString["Url"]))
-                        Response.Redirect("Dashboard.aspx");
-                    else
-                        Response.Redirect(Request.QueryString["Url"]);
-                }
-                else
-                    Alert("Invalid User Id or Password! Try again.");
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from tblStudent where Student_Id = @x and Password = @p";
+                cmd.Parameters.AddWithValue("@x", studentId);
+                cmd.Parameters.AddWithValue("@p", password);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
             }
-            catch
+
+            if (dt.Rows.Count != 0)
             {
-                Alert(GlobalClass.DatabaseError);
+                if (dt.Rows[0]["Status"].ToString().Trim() == "Active")
+                {
+                    Session.Add("studentId", dt.Rows[0]["Student_Id"].ToString().Trim());
+                    Session.Add("password", dt.Rows[0]["Password"].ToString().Trim());
+                    Session.Add("name", dt.Rows[0]["Name"].ToString().Trim());
+                    Response.Redirect("Dashboard.aspx");
+                }
+                else if (dt.Rows[0]["Status"].ToString().Trim() == "Block")
+                    Alert("User is blocked for security reasons");
+                else if (dt.Rows[0]["Status"].ToString().Trim() == "Deactive")
+                {
+                    Alert("User is Deactive, Contact to HOD");
+                }
+            }
+            else
+            {
+                Alert("User id or password invalid!");
             }
         }
         else
-            Alert("Please enter User Id and Password.");
+        {
+            Alert("Please enter user id and password");
+        }
+        
+       
+        }
+    protected void linkRegister_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Registration.aspx");
     }
 }
