@@ -34,7 +34,7 @@
         </asp:UpdateProgress>
 
         <%
-            string headerpath = HttpContext.Current.Server.MapPath("Html/Manage_Student.htm");
+            string headerpath = HttpContext.Current.Server.MapPath("Html/Header.htm");
            
             string headercontent = System.IO.File.ReadAllText(headerpath);
             Response.Write(headercontent);

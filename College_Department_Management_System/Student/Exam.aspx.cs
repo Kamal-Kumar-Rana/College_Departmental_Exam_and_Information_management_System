@@ -42,10 +42,10 @@ public partial class User_Exam : System.Web.UI.Page
                 updatehtml.Append('"');
                 
                 updatehtml.Append(" width=");
-                updatehtml.Append(" '640'");
+                updatehtml.Append(" '1250'");
                 
                 updatehtml.Append(" height=");
-                updatehtml.Append("'400'");
+                updatehtml.Append("'450'");
                 updatehtml.Append(" marginheight=");
                 updatehtml.Append("'0'");
                 updatehtml.Append(" marginwidth=");

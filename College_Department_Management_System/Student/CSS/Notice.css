@@ -25,4 +25,12 @@
   .notice-section p {
     margin-bottom: 0;
   }
-  
+  #update
+  {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #eee;
+    border: 1px dashed #555;
+    border-radius: 4px;  
+  }

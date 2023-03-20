@@ -8,7 +8,7 @@
 </head>
 <body>
   
-    <title>Teacher Profile</title>
+    <title>User Profile</title>
     <style type="text/css">
         #wrapper {
             width: 80%;

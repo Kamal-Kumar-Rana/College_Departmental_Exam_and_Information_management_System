@@ -1,0 +1,24 @@
+﻿<div id="header">
+    <div id="menu">
+        <input type="checkbox" id="check" />
+        <label for="check">
+            <i class="fas fa-bars" id="btn" onclick="toggle()"></i>
+        </label>
+        <div id="sidebar">
+            <div class="logo">Panel Items
+                <label for="check">
+                    <i class="fas fa-times" id="cancel" onclick="toggle()"></i>
+                </label>
+            </div>
+            <ul>
+                
+                <li><a href="../Modify_Student.aspx"><i class="fas fa-home"></i>Modify Student </a></li>
+                <li><a href="../Add_Student.aspx"><i class="fas fa-home"></i>Add New Student</a></li>
+                <li><a href="../Dashboard.aspx"><i class="fas fa-home"></i>Go to Dashboard</a></li>
+             <li><a href="../Logout.aspx" onclick="return confirm('Are you sure you want to logout?');"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+        </div>
+        <div id="blur"></div>
+    </div>
+    <div id="logo"><span>Advance Exam Management System</span></div>
+</div>

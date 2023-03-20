@@ -38,8 +38,8 @@
             Response.Write(headercontent);
         %>
 
-        <!--<asp:UpdatePanel ID="pageUpdate" runat="server">
-            <ContentTemplate>-->
+        <asp:UpdatePanel ID="pageUpdate" runat="server">
+            <ContentTemplate>
                 <div id="body">
                     <div class="status top">
                         <i class="fas fa-user-shield"></i>
@@ -123,8 +123,8 @@
                         </div>
                     </div>
                 </div>
-            <!--</ContentTemplate>
-        </asp:UpdatePanel>-->
+            </ContentTemplate>
+        </asp:UpdatePanel>
 
         <%
             string footerpath = HttpContext.Current.Server.MapPath("Html/Footer.htm");

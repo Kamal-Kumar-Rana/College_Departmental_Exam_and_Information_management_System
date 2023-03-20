@@ -41,19 +41,10 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 15px 2px rgba(0, 0, 0, .3);
+    
+     
 }
 
-#holi {
-    width: 100%;
-    height: 500px;
-    margin-bottom: 65px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-    position: relative;
-}
 
 #holi div {
     position: relative;

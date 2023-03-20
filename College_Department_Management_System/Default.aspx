@@ -25,8 +25,8 @@
             <div id="menu">
                 <ul>
                     <li><a class="a" href="#"><i class="fas fa-home"  ></i>Home</a></li>
-                    <li><a class="a" href="#"><i class="fas fa-info-circle"></i>Notice</a></li>
-                    <li><a class="btnLogin" href="Teacher/Login.aspx" target="_blank"><i class="fas fa-user-plus"  ></i>HOD Login</a></li>
+                    <li><a class="a" href="Student/Notice.aspx" target="_blank"><i class="fas fa-info-circle"></i>Notice</a></li>
+                    <li><a class="btnLogin" href="HOD/Login.aspx" target="_blank"><i class="fas fa-user-plus"  ></i>HOD Login</a></li>
                     <li><a class="btnLogin" href="Student/Login.aspx" target="_blank"><i class="fas fa-sign-in-alt" ></i>Student Login</a></li>
                     <li><a class="btnLogin" href="Teacher/Login.aspx" target="_blank"><i class="fas fa-user-plus" ></i>Teachers Login</a></li>
 

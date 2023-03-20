@@ -43,7 +43,7 @@
                         <asp:Label ID="status" runat="server" Text="Exam"></asp:Label>
                         <asp:Label ID="lblInfo" runat="server" Text="name (id)"></asp:Label>
                     </div>
-                    <div id="content" style="padding-left:25%" runat="server">
+                    <div id="content" style="padding-left:0" runat="server">
                     <!-- Dynamic Html Code-->   
                         
                     </div>

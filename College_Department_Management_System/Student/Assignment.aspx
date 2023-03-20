@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PreExam.aspx.cs" Inherits="User_PreExam" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Assignment.aspx.cs" Inherits="Student_Assignment" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

@@ -28,7 +28,7 @@
     <asp:UpdatePanel ID="pageUpdate" runat="server"><ContentTemplate>
         <div id="logo" runat="server">Departmental Exam Management System</div>
         <div class="login-panel">
-            <h1><i class="fas fa-user-shield"></i> TEACHER LOGIN</h1>
+            <h1><i class="fas fa-user-shield"></i> ADMIN LOGIN</h1>
 
             <div class="input-box">
                 <asp:TextBox ID="txtUsername" class="input" type="text" autocomplete="off" runat="server" required MaxLength="10"></asp:TextBox>

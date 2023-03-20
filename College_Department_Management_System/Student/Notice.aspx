@@ -44,9 +44,9 @@
         
         <ul>
           <li>
-                <h3>Student Notice</h3>
+                
              <div id="update" class="window" runat="server">
-                            
+                         <h3>Notice</h3>   
                         </div>
                  <asp:Panel ID="task" class="window" runat="server" Visible="false">
                        
@@ -55,10 +55,7 @@
                             </div>
                         </asp:Panel>
           </li>
-          <li>
-            <h3>Departmental Notice</h3>
-              <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-          </li>
+         
           
         </ul>
       </div>
@@ -67,6 +64,11 @@
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
+          <%
+            string footerpath = HttpContext.Current.Server.MapPath("Html/Footer.htm");
+            string footercontent = System.IO.File.ReadAllText(footerpath);
+            Response.Write(footercontent);
+        %>
 
        
     </form>

@@ -42,7 +42,11 @@ public partial class Student_Notice : System.Web.UI.Page
                 updatehtml.Append(row["Message"].ToString().Trim());
                 updatehtml.Append("<br>Updated on : ");
                 updatehtml.Append(row["Publish_Date"].ToString().Trim());
+                updatehtml.Append(", ");
+                updatehtml.Append("By- ");
+                updatehtml.Append(row["By"].ToString().Trim());
                 updatehtml.Append("</li>");
+                
             }
         }
         else
