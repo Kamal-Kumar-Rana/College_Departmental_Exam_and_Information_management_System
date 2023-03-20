@@ -9,7 +9,17 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <asp:FileUpload ID="fileUpload" runat="server" />
+         </div>
+        <div>
+ <asp:Button ID="btnUpload" runat="server" Text="upload" onclick="btnUpload_Click"  />
+    </div>
+   
+    <div>
+     <asp:Label ID="lblMessage" runat="server" ></asp:Label>
+    </div>
+    <div>
+        <asp:HyperLink ID="HyperLink" runat="server">View Uploaded Image</asp:HyperLink>
     </div>
     </form>
 </body>

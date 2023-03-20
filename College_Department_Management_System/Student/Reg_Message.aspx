@@ -20,7 +20,7 @@
 	</div>
     <center>
     <asp:Button ID="btn" Cssclass="btn btn-primary btn-lg" runat="server"  
-            Text="Go to Dashboard" onclick="btn_Click" />
+            Text="Go to Log in" onclick="btn_Click" />
     </center>
 
     </form>

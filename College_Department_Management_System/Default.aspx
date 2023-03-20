@@ -20,12 +20,12 @@
 </head>
 <body class="body">
     <form id="default" runat="server">
-        <div id="logo" runat="server"> Depertmental Exam And Information Management System</div>
+        <div id="logo" runat="server">Depertmental Exam And Information Management System</div>
      <div id="header" runat="server">
             <div id="menu">
                 <ul>
                     <li><a class="a" href="#"><i class="fas fa-home"  ></i>Home</a></li>
-                    <li><a class="a" href="#"><i class="fas fa-info-circle"></i>Dashboard</a></li>
+                    <li><a class="a" href="#"><i class="fas fa-info-circle"></i>Notice</a></li>
                     <li><a class="btnLogin" href="Teacher/Login.aspx" target="_blank"><i class="fas fa-user-plus"  ></i>HOD Login</a></li>
                     <li><a class="btnLogin" href="Student/Login.aspx" target="_blank"><i class="fas fa-sign-in-alt" ></i>Student Login</a></li>
                     <li><a class="btnLogin" href="Teacher/Login.aspx" target="_blank"><i class="fas fa-user-plus" ></i>Teachers Login</a></li>

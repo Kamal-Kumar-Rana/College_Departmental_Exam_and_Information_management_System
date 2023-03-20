@@ -7,10 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-
-public partial class Admin_Publish_Notice : System.Web.UI.Page
+public partial class Admin_Notice : System.Web.UI.Page
 {
-   
+    string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 
     public void Alert(string message)
     {
@@ -32,11 +31,14 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
         str.Append("')");
         return (str.ToString());
     }
-  
+    private void ShowAdminInfo(string adminId)
+    {
+        DataTable dt = GlobalClass.LoadAdmin(adminId);
+        lblId.Text = dt.Rows[0]["AdminId"].ToString().Trim();
+        lblName.Text = dt.Rows[0]["Name"].ToString().Trim();
+    }
     private string GenerateNoticeNo()
     {
-        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-
         const String alpha = "0123456789";
         string id = "N";
         int exist = 1;
@@ -75,62 +77,64 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
         }
         gvUpdates.DataSource = dt;
         gvUpdates.DataBind();
-        
+
         if (dt.Rows.Count == 0)
         {
             dt.Rows.Add(dt.NewRow());
             gvUpdates.DataSource = dt;
-            gvUpdates.DataBind();
+           gvUpdates.DataBind();
             gvUpdates.Rows[0].Visible = false;
         }
     }
 
-
     protected void Page_Load(object sender, EventArgs e)
     {
-        
         if (!IsPostBack)
         {
-            gvUpdatesLoad(); 
+            gvUpdatesLoad();
         }
+        else
+        {
+            if (ViewState["ViewStateId"].ToString() != Session["SessionId"].ToString())
+                Response.Redirect(Request.Url.AbsoluteUri);
+            Session["SessionId"] = System.Guid.NewGuid().ToString();
+            ViewState["ViewStateId"] = Session["SessionId"].ToString();
+        }
+
+      
     }
 
     protected void gvUpdates_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         if (e.CommandName.Equals("New"))
         {
-
-            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-
             string today = GlobalClass.CurrentDateTime();
             string msg = (gvUpdates.FooterRow.FindControl("txtMessage") as TextBox).Text.Trim();
-            if (msg != " ")
+            if (msg != "")
             {
-               
                 string id = GenerateNoticeNo();
                 using (SqlConnection con = new SqlConnection(cs))
                 {
-                    con.Open();
-                    /*try
-                    {*/
+                    try
+                    {
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = con;
-                        cmd.CommandText = "insert into tblNotice values(@Notice_ID, @Publish_Date,@By, @Message, @LastUpdate)";
+                     cmd.CommandText = "insert into tblNotice values(@Notice_ID, @Publish_Date,@By, @Message, @LastUpdate)";
                         cmd.Parameters.AddWithValue("@Notice_ID", id);
-                        cmd.Parameters.AddWithValue("@Publish_Date", today);
+                        cmd.Parameters.AddWithValue("@Publish_Dates", today);
                         cmd.Parameters.AddWithValue("@By","HOD");
                         cmd.Parameters.AddWithValue("@Message", msg);
                         cmd.Parameters.AddWithValue("@LastUpdate", today);
-                        
+                        con.Open();
                         cmd.ExecuteNonQuery();
 
                         gvUpdatesLoad();
                         Alert("New notice published successfully.");
-                    /*}
+                    }
                     catch
                     {
                         Alert(GlobalClass.DatabaseError);
-                    }*/
+                    }
                 }
             }
             else
@@ -153,24 +157,23 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
 
     protected void gvUpdates_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
-        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-
         string id = gvUpdates.DataKeys[e.RowIndex].Value.ToString();
         string today = GlobalClass.CurrentDateTime();
         string msg = (gvUpdates.Rows[e.RowIndex].FindControl("txtMessage") as TextBox).Text.Trim();
-        if (msg != " ")
+        if (msg != "")
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
-                /*try
-                {*/
+                try
+                {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = "update tblNotice set Message= @Message, LastUpdate=@LastUpdate where Notice_ID=@Notice_ID";
+                    cmd.CommandText = "update tblNotice set Publish_Date= @Publish_Date,By=@By,Message= @Message, LastUpdate=@LastUpdate where Notice_ID=@Notice_ID ";
                     cmd.Parameters.AddWithValue("@Notice_ID", id);
+                    cmd.Parameters.AddWithValue("@Publish_Dates", today);
+                    cmd.Parameters.AddWithValue("@By", "HOD");
                     cmd.Parameters.AddWithValue("@Message", msg);
                     cmd.Parameters.AddWithValue("@LastUpdate", today);
-
                     con.Open();
                     cmd.ExecuteNonQuery();
 
@@ -178,34 +181,29 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
                     gvUpdatesLoad();
                     Alert("Notice updated successfully.");
                     gvUpdates.Rows[e.RowIndex].BackColor = System.Drawing.Color.LightGreen;
-                /*}
+                }
                 catch
                 {
                     Alert(GlobalClass.DatabaseError);
-                }*/
+                }
             }
         }
         else
             Alert("Please fill all fields.");
     }
 
-
     protected void gvUpdates_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-
         string id = gvUpdates.DataKeys[e.RowIndex].Value.ToString();
         using (SqlConnection con = new SqlConnection(cs))
         {
-            con.Open();
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-      
                 cmd.CommandText = "delete from tblNotice where Notice_ID = @Notice_ID";
                 cmd.Parameters.AddWithValue("@Notice_ID", id);
-           
+                con.Open();
                 cmd.ExecuteNonQuery();
 
                 gvUpdatesLoad();
@@ -217,5 +215,4 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
             }
         }
     }
-
 }

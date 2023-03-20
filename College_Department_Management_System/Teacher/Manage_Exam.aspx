@@ -17,6 +17,7 @@
     <script src="JS/Dashboard.js" type="text/javascript"></script>
 </head>
 <body>
+   
     <form id="dashboard" runat="server">
         <asp:ScriptManager ID="scriptPage" runat="server">
         </asp:ScriptManager>
@@ -54,7 +55,39 @@
                         <asp:Label ID="status" runat="server" Text="Admin Panel / Manage Exam"></asp:Label>
                     </div>
                     <div id="content">
-                        
+                        <div id="info" style="padding-right:60%">
+                        <div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">BCA-201</span>
+  </div>
+  
+         <asp:TextBox ID="txtLink2" runat="server" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" ></asp:TextBox>
+</div>
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="Span1">BCA-401</span>
+  </div>
+  
+         <asp:TextBox ID="txtLink4" runat="server" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" ></asp:TextBox>
+</div>
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="Span2">BCA-601</span>
+  </div>
+  
+         <asp:TextBox ID="txtLink6" runat="server" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" ></asp:TextBox>
+</div>
+                            <asp:Button ID="btnSend" runat="server" Text="Send" class="btn btn-success" 
+                                onclick="btnSend_Click" />
+
+                            <asp:Label Text=" " runat="server" id="lbl" />
+
+
+                        </div>
+
+
+
+
                             </div>
                         
                     </div>

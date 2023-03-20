@@ -59,12 +59,10 @@
                         
                          <div id="info" class="window">
                            
-                            <div class="tab">
+                             <div class="tab">
                                 <p>Total Student</p>
-                               
-                                <div class="content">
-                                    
-                                </div>
+                                <asp:Label ID="lblStudent" runat="server" Text="0"></asp:Label>
+                                
                             </div>
                             
                              <div class="tab">

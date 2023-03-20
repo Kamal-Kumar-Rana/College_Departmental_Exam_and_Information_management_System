@@ -1,0 +1,28 @@
+﻿.notice-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .notice-section h2 {
+    margin-top: 0;
+  }
+  
+  .notice-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notice-section li {
+    margin-bottom: 20px;
+  }
+  
+  .notice-section h3 {
+    margin-top: 0;
+  }
+  
+  .notice-section p {
+    margin-bottom: 0;
+  }
+  
