@@ -51,9 +51,10 @@
             </div>
             <asp:Button ID="btnLogin" CssClass="login-btn" runat="server" Text="LOGIN" 
                 onclick="btnLogin_Click" />
-            <!--<div class="row">
-                <asp:LinkButton ID="linkForgotPassword" CssClass="link" runat="server">Password Recovery</asp:LinkButton>
-            </div>-->
+            <div class="row">
+                <a href="../Default.aspx" CssClass="link" >Go To Home</a>
+               
+            </div>
         </div>
     </ContentTemplate></asp:UpdatePanel>
     </form>

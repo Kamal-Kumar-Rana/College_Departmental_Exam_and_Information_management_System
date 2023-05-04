@@ -35,7 +35,7 @@ public partial class Admin_Login : System.Web.UI.Page
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "select * from tblEmployee where Emp_Id = @x and Password = @p";
+                cmd.CommandText = "select * from tblEmployee where Emp_Id = @x and Password = @p and Type='HOD'";
                 cmd.Parameters.AddWithValue("@x", username);
                 cmd.Parameters.AddWithValue("@p", password);
                 SqlDataAdapter da = new SqlDataAdapter();

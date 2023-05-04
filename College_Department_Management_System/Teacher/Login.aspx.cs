@@ -35,7 +35,7 @@ public partial class Admin_Login : System.Web.UI.Page
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "select * from tblEmployee where Emp_Id = @x and Password = @p";
+                cmd.CommandText = "select * from tblEmployee where Emp_Id = @x and Password = @p and Type!='HOD'";
                 cmd.Parameters.AddWithValue("@x", username);
                 cmd.Parameters.AddWithValue("@p", password);
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -47,6 +47,7 @@ public partial class Admin_Login : System.Web.UI.Page
             {
                 Session.Add("ywivreqi", dt.Rows[0]["Emp_Id"].ToString().Trim());
                 Session.Add("rcuuyqtf", dt.Rows[0]["Password"].ToString().Trim());
+                Session.Add("type",dt.Rows[0]["Type"].ToString().Trim());
                 Session.Add("name",dt.Rows[0]["Name"].ToString().Trim());
                 Response.Redirect("Dashboard.aspx");
             }

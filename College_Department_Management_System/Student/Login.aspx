@@ -12,6 +12,15 @@
     <script src="JS/Login.js" type="text/javascript"></script>
 </head>
 <body>
+    <style type="text/css">
+    #linkHome
+    {
+        padding-left:30px;
+        
+        
+    }
+    
+    </style>
  
     <form id="login" runat="server">
         <asp:ScriptManager ID="pageScript" runat="server">
@@ -57,11 +66,23 @@
                        
                         <asp:LinkButton ID="linkRegister" CssClass="link" runat="server" 
                             onclick="linkRegister_Click" >Register Now</asp:LinkButton>
+
+                               
+                       
+                        <asp:LinkButton ID="linkHome" CssClass="link" runat="server" onclick="linkHome_Click" 
+                             >Back To Home</asp:LinkButton>
+                        
+                  
+               
                         <asp:LinkButton ID="linkForgotPassword" CssClass="link" runat="server" >Forgot Password?</asp:LinkButton>
                   
                 </div>
+                
+                
             </ContentTemplate>
+        
         </asp:UpdatePanel>
+         
     </form>
 </body>
 </html>

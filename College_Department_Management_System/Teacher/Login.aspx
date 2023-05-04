@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Admin Login</title>
+    <title>Teacher Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="CSS/Login.css" rel="stylesheet" type="text/css" />
     <link href="CSS/Loader.css" rel="stylesheet" type="text/css" />

@@ -4,11 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Student | Dashboard</title>
+    <title>Student | Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="CSS/Dashboard.css" rel="stylesheet" type="text/css" />
     <link href="../Teacher/CSS/Candidates.css" rel="stylesheet" type="text/css" />
-   
+    <link href="../Global/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <%
         string path = HttpContext.Current.Server.MapPath("Link.txt");
         string content = System.IO.File.ReadAllText(path);
@@ -33,7 +33,7 @@
         </asp:UpdateProgress>
  
 
-        <asp:UpdatePanel ID="updatePage" runat="server">
+        <<asp:UpdatePanel ID="updatePage" runat="server">
             <ContentTemplate>
             <div id="header">
                     <div id="logo"><span>Student Registration</span></div>
@@ -60,12 +60,7 @@
                                     <span class="content-name">Name</span>
                                 </label>
                             </div>
-                              <div class="input-box">
-                                <asp:TextBox ID="txtPassword" class="input" type="text" autocomplete="off" runat="server" required MaxLength="20" TextMode="Password"></asp:TextBox>
-                                <label for="txtPassword" class="label-name">
-                                    <span class="content-name">Password</span>
-                                </label>
-                            </div>
+                            
                               <div class="input-box">
                                 <asp:TextBox ID="txtSemester" class="input" type="text" autocomplete="off" runat="server" required MaxLength="15"></asp:TextBox>
                                 <label for="txtSemester" class="label-name">
@@ -97,11 +92,17 @@
                                     <span class="content-name">Date of Birth</span>
                                 </label>
                             </div>
+                               <div class="input-box">
+                                <asp:TextBox ID="txtAddress" class="input" type="text" autocomplete="off" runat="server" required MaxLength="50"></asp:TextBox>
+                                <label for="txtAddress" class="label-name">
+                                    <span class="content-name">Address</span>
+                                </label>
+                            </div>
 
                               
 
                              <div class="input-box">
-                                <asp:TextBox ID="txtMobile" class="input" type="text" autocomplete="off" runat="server" required
+                                <asp:TextBox ID="txtMobile" class="input" type="phone" autocomplete="off" runat="server" required
                                     onkeypress='validate(event)' MaxLength="10"></asp:TextBox>
                                 <label for="txtMobile" class="label-name">
                                     <span class="content-name">Mobile number</span>
@@ -110,18 +111,37 @@
                             
 
                             <div class="input-box">
-                                <asp:TextBox ID="txtEmail" class="input" type="text" autocomplete="off" runat="server" required MaxLength="50"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" class="input" type="Email" autocomplete="off" runat="server" required MaxLength="50"></asp:TextBox>
+                               
                                 <label for="txtEmail" class="label-name">
                                     <span class="content-name">Email</span>
                                 </label>
-                            </div>
+                                
 
-                        <div class="input-box">
-                                <asp:TextBox ID="txtAddress" class="input" type="text" autocomplete="off" runat="server" required MaxLength="50"></asp:TextBox>
-                                <label for="txtAddress" class="label-name">
-                                    <span class="content-name">Address</span>
+                            </div >
+                          
+
+                              <div class="input-box">
+                               <div class="input-group">
+                                   <asp:TextBox ID="txtOtp" placeholder="OTP" class="form-control" runat="server"></asp:TextBox>
+                                   <asp:Button ID="btnOtpSend" class="btn btn-outline-secondary" runat="server" 
+                                       Text="Send OTP" onclick="btnOtpSend_Click" />
+                                   <asp:Button ID="btnOtpVerify" class="btn btn-outline-secondary" runat="server" 
+                                       Text="Verify" onclick="btnOtpVerify_Click" />
+  
+</div>
+  
+
+
+                            </div>
+                            <div class="input-box">
+                                <asp:TextBox ID="txtPassword" class="input"  runat="server"  TextMode="Password"></asp:TextBox>
+                                <label for="txtPassword" class="label-name">
+                                    <span class="content-name">Password</span>
                                 </label>
                             </div>
+
+                     
 
                            
 
@@ -150,7 +170,7 @@
                       
                     </div>
                 </div>
-            </ContentTemplate>
+          </ContentTemplate>
         </asp:UpdatePanel>
 
        

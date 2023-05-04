@@ -59,9 +59,12 @@
                             </ul>
                         </div>
                         <div class="gvContainer">
-                            <asp:GridView ID="gvUpdates" CssClass="gv" runat="server" AutoGenerateColumns="False" ShowFooter="True"
+                            <asp:GridView ID="gvUpdates" CssClass="gv" runat="server" 
+                                AutoGenerateColumns="False" ShowFooter="True"
                                 DataKeyNames="Notice_ID" OnRowCancelingEdit="gvUpdates_RowCancelingEdit" OnRowCommand="gvUpdates_RowCommand"
-                                OnRowDeleting="gvUpdates_RowDeleting" OnRowEditing="gvUpdates_RowEditing" OnRowUpdating="gvUpdates_RowUpdating">
+                                OnRowDeleting="gvUpdates_RowDeleting" OnRowEditing="gvUpdates_RowEditing" 
+                                OnRowUpdating="gvUpdates_RowUpdating" 
+                                >
                                 <Columns>
                                     <asp:TemplateField HeaderText="Update" ItemStyle-CssClass="gvitem" HeaderStyle-CssClass="gvheader">
                                         <ItemTemplate>
@@ -89,6 +92,23 @@
                                         <HeaderStyle CssClass="gvheader"></HeaderStyle>
                                         <ItemStyle CssClass="gvitem"></ItemStyle>
                                         <FooterStyle CssClass="gvitem"></FooterStyle>
+                                    </asp:TemplateField>
+
+                                       <asp:TemplateField HeaderText="File" ItemStyle-CssClass="gvitem" HeaderStyle-CssClass="gvheader">
+                                        <ItemTemplate>
+                                            <asp:FileUpload ID="FileUpload1" runat="server" Visible=false />
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                                        </EditItemTemplate>
+                                         <FooterTemplate>
+                                           <asp:FileUpload ID="FileUpload1" runat="server" />
+                                        </FooterTemplate>
+                                
+                                        <HeaderStyle CssClass="gvheader"></HeaderStyle>
+                                        <ItemStyle CssClass="gvitem"></ItemStyle>
+                                        <FooterStyle CssClass="gvitem"></FooterStyle>
+                                      
                                     </asp:TemplateField>
 
                                   <asp:TemplateField HeaderText="Action" ItemStyle-CssClass="gvaction" HeaderStyle-CssClass="gvheader">

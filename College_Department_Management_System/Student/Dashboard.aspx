@@ -38,7 +38,7 @@
         <asp:UpdatePanel ID="updatePage" runat="server">
             <ContentTemplate>
                 <div id="body">
-                    <div class="status">
+                     <div class="status">
                         <i class="fas fa-angle-double-right"></i>
                         <asp:Label ID="status" runat="server" Text="Dashboard"></asp:Label>
                         <asp:Label ID="lblInfo" runat="server" Text="name (id)"></asp:Label>

@@ -9,6 +9,11 @@ public partial class User_Dashboard : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (Session["studentid"] != null)
+        {
+            string id= Session["studentid"].ToString();
+            string name = Session["name"].ToString();
+            lblInfo.Text = name + "-" + id;
+        }
     }
 }

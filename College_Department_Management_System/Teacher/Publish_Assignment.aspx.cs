@@ -13,24 +13,5 @@ public partial class Admin_Publish_assignment : System.Web.UI.Page
     {
 
     }
-    protected void btn_Click(object sender, EventArgs e)
-    {
-        string id = txtId.Text;
-        string name = txtName.Text;
-        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-        using (SqlConnection con = new SqlConnection(cs))
-        {
-            con.Open();
 
-            SqlCommand cmdinsert = new SqlCommand();
-            cmdinsert.Connection = con;
-            cmdinsert.CommandText = "insert into Table_1 values(@Id, @Name)";
-            cmdinsert.Parameters.AddWithValue("@Id", id);
-            cmdinsert.Parameters.AddWithValue("@Name", name);
-
-            cmdinsert.ExecuteNonQuery();
-            con.Close();
-
-        }
-    }
 }

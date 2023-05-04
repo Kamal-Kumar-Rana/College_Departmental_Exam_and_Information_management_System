@@ -93,6 +93,12 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
         {
             gvUpdatesLoad(); 
         }
+        if (Session["ywivreqi"] != null)
+        {
+            lblId.Text = Session["ywivreqi"].ToString();
+            lblName.Text = Session["name"].ToString();
+
+        }
     }
 
     protected void gvUpdates_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -222,4 +228,5 @@ public partial class Admin_Publish_Notice : System.Web.UI.Page
         }
     }
 
+   
 }

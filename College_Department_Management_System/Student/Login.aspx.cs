@@ -51,6 +51,14 @@ string cs = GlobalClass.cs;
                     Session.Add("studentId", dt.Rows[0]["Student_Id"].ToString().Trim());
                     Session.Add("password", dt.Rows[0]["Password"].ToString().Trim());
                     Session.Add("name", dt.Rows[0]["Name"].ToString().Trim());
+                    Session.Add("semester", dt.Rows[0]["Semester"].ToString().Trim());
+                    Session.Add("roll", dt.Rows[0]["Roll_No"].ToString().Trim());
+                    Session.Add("gender", dt.Rows[0]["Gender"].ToString().Trim());
+                    Session.Add("dob", dt.Rows[0]["DOB"].ToString().Trim());
+                    Session.Add("mobile", dt.Rows[0]["Mobile"].ToString().Trim());
+                    Session.Add("email", dt.Rows[0]["Email"].ToString().Trim());
+                    Session.Add("address", dt.Rows[0]["Address"].ToString().Trim());
+                    Session.Add("status", dt.Rows[0]["Status"].ToString().Trim());
                     Response.Redirect("Dashboard.aspx");
                 }
                 else if (dt.Rows[0]["Status"].ToString().Trim() == "Block")
@@ -75,5 +83,9 @@ string cs = GlobalClass.cs;
     protected void linkRegister_Click(object sender, EventArgs e)
     {
         Response.Redirect("Registration.aspx");
+    }
+    protected void linkHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Default.aspx");
     }
 }

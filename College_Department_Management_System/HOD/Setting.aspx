@@ -19,7 +19,7 @@
      <asp:Label ID="lblMessage" runat="server" ></asp:Label>
     </div>
     <div>
-        <asp:HyperLink ID="HyperLink" runat="server">View Uploaded Image</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink" runat="server" Enabled="False">View Uploaded Image</asp:HyperLink>
     </div>
     </form>
 </body>

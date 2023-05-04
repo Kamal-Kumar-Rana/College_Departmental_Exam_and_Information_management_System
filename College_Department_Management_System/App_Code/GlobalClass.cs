@@ -101,8 +101,8 @@ public class GlobalClass
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select * from tblAdmin where AdminId = @AdminId COLLATE SQL_Latin1_General_CP1_CS_AS";
-            cmd.Parameters.AddWithValue("@AdminId", adminId);
+            cmd.CommandText = "select * from tblStudent where Student_Id = @Student_Id COLLATE SQL_Latin1_General_CP1_CS_AS";
+            cmd.Parameters.AddWithValue("@Student_Id", adminId);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
             da.Fill(dtAdmin);

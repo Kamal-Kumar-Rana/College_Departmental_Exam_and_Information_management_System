@@ -58,6 +58,8 @@ body {
 #holi div {
     position: relative;
     z-index: 1;
+    top: 0px;
+    left: 0px;
 }
 
 #holi div h1 {
@@ -223,7 +225,10 @@ body {
 #lblValidity {
     font-size: 16px;
 }
-
+#link
+{
+ padding-right:auto;   
+}
 
 /*-------------Mobile-------------*/
 
@@ -238,4 +243,3 @@ body {
         filter: blur(2px);
     }
 }
-

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Admin Panel | Dashboard</title>
+    <title>Teacher Panel | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="CSS/Dashboard.css" rel="stylesheet" type="text/css" />
     <link href="CSS/Dashboard_image.css" rel="stylesheet" type="text/css" />
@@ -43,7 +43,7 @@
                 <div id="body">
                     <div class="status top">
                         <i class="fas fa-user-shield"></i>
-                        <asp:Label ID="Label1" class="lbl" runat="server" Text="Admin"></asp:Label>
+                        <asp:Label ID="Label1" class="lbl" runat="server" Text="Teacher"></asp:Label>
                         <span class="info">
                             <asp:Label ID="lblId" class="lbl" runat="server" ></asp:Label>- 
                             <asp:Label ID="lblName" class="lbl" runat="server" ></asp:Label>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="status bottom">
                         <i class="fas fa-angle-double-right"></i>
-                        <asp:Label ID="status" runat="server" Text="Admin Panel / Dashboard"></asp:Label>
+                        <asp:Label ID="status" runat="server" Text="Teacher Panel / Dashboard"></asp:Label>
                     </div>
                     <div id="content">
                    

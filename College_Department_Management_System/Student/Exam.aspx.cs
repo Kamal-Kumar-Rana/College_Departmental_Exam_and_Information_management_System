@@ -16,29 +16,40 @@ public partial class User_Exam : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         ShowUpdate();
+        if (Session["studentid"] != null)
+        {
+            string id = Session["studentid"].ToString();
+            string name = Session["name"].ToString();
+            string sem = Session["Semester"].ToString();
+            lblInfo.Text = name + "-" + id;
+        }
     }
     private void ShowUpdate()
     {
+         string sem = Session["Semester"].ToString();
         DataTable dt = new DataTable();
+        DataTable dt2 = new DataTable();
         using (SqlConnection con = new SqlConnection(cs))
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select * from tblTestExam";
+            cmd.CommandText = "select * from tblExam where Semester=@Semester";
+            cmd.Parameters.AddWithValue("@Semester", sem);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
             da.Fill(dt);
+
         }
         StringBuilder updatehtml = new StringBuilder();
-        
-       
-            foreach (DataRow row in dt.Rows)
-            {
+
+
+        DataRow row = dt.Rows[0];
+            
                 updatehtml.Append("<iframe ");
                 updatehtml.Append("src=");
                 updatehtml.Append('"');
 
-                updatehtml.Append(row["Link6"].ToString().Trim());
+                updatehtml.Append(row["Link"].ToString().Trim());
                 updatehtml.Append('"');
                 
                 updatehtml.Append(" width=");
@@ -54,13 +65,14 @@ public partial class User_Exam : System.Web.UI.Page
                 updatehtml.Append(">");
                  updatehtml.Append(" </iframe>");
                
-            }
+            
         content.InnerHtml += updatehtml.ToString();
 
         }
+    }
      
        
        
         
 
-    }
+    

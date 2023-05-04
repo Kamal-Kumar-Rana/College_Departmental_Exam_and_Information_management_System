@@ -172,11 +172,12 @@ body {
     min-height: 300px;
     max-height: 400px;
     user-select: text;
+    width: 913px;
+    height: 427px;
 }
 
 .gv {
     border-color: #ccc;
-    width: 100%;
     text-align: center;
 }
 

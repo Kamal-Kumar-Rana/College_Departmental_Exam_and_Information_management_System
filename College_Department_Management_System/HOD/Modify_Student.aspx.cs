@@ -39,17 +39,26 @@ public partial class Teacher_Modify_Student : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        if (Session["ywivreqi"] != null)
         {
-           
-            
+            lblId.Text = Session["ywivreqi"].ToString();
+            lblName.Text = Session["name"].ToString();
+
         }
+        
        
+    }
+    protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ddlCategory.Items.Remove("Select a option");
+        lblKey.InnerText = "Enter " + ddlCategory.SelectedItem.ToString();
     }
     protected void btnSearch_Click(object sender, EventArgs e)
         
     {
-        gvLoad();
+        
+        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+       /* gvLoad();
         Thread.Sleep(1000);
        string studentid = txtStudentId.Text.Trim();
 
@@ -84,7 +93,38 @@ public partial class Teacher_Modify_Student : System.Web.UI.Page
         {
         //  lblMass.Text = "Data Not Found For Student Id " + studentid.ToString();
          
+        }*/
+        string ddl = ddlCategory.SelectedValue.ToString();
+        if (ddl != "Select a option")
+        {
+            string key = txtKey.Text.Trim();
+            if (key != "")
+            {
+                DataTable dt = new DataTable();
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "select * from tblStudent where " + ddl + " like @Key";
+                    cmd.Parameters.AddWithValue("@Key", "%" + key + "%");
+                    da.SelectCommand = cmd;
+                    con.Open();
+                    da.Fill(dt);
+                }
+                gvUser.DataSource = dt;
+                gvUser.DataBind();
+                if (dt.Rows.Count == 0)
+                {
+                    Label lbl = gvUser.Controls[0].Controls[0].FindControl("lblError") as Label;
+                    lbl.Text = "No data found.";
+                }
+            }
+            else
+                Alert("Please enter search keyword.");
         }
+        else
+            Alert("Please select a category.");
     }
     protected void gvUser_RowEditing(object sender, GridViewEditEventArgs e)
     {
@@ -100,8 +140,9 @@ public partial class Teacher_Modify_Student : System.Web.UI.Page
     protected void gvUser_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-        string status = (gvUser.Rows[e.RowIndex].FindControl("txtEditStatus") as TextBox).Text.Trim();
+        //string status = (gvUser.Rows[e.RowIndex].FindControl("txtEditStatus") as TextBox).Text.Trim();
         string studentId = gvUser.DataKeys[e.RowIndex].Value.ToString();
+        string status = (gvUser.Rows[e.RowIndex].FindControl("ddl") as DropDownList).Text.Trim();
         using (SqlConnection con = new SqlConnection(cs))
         {
             con.Open();
@@ -114,9 +155,9 @@ public partial class Teacher_Modify_Student : System.Web.UI.Page
                 cmdUpdateUser.CommandText = "update tblStudent set Status = @Status where Student_Id = @Student_Id";
                 cmdUpdateUser.Parameters.AddWithValue("@Status", status);
                 cmdUpdateUser.Parameters.AddWithValue("@Student_Id", studentId);
-               
-                cmdUpdateUser.ExecuteNonQuery();
 
+                cmdUpdateUser.ExecuteNonQuery();
+                Alert("Sucessfull");
                 transaction.Commit();
                 gvUser.EditIndex = -1;
                 btnSearch_Click(sender, e);
@@ -129,8 +170,23 @@ public partial class Teacher_Modify_Student : System.Web.UI.Page
                 transaction.Rollback();
                 Alert("Databse is not currently response");
             }
-        }
 
+            /* using (SqlConnection con = new SqlConnection(cs))
+             {
+                 con.Open();
+
+                 SqlCommand cmdinsert = new SqlCommand();
+                 cmdinsert.Connection = con;
+                 cmdinsert.CommandText = "update tblStudent set Status = @Status where Student_Id = @Student_Id";
+                 cmdinsert.Parameters.AddWithValue("@Student_Id", studentId);
+                 cmdinsert.Parameters.AddWithValue("@Status", "Active");
+                 cmdinsert.ExecuteNonQuery();
+                 Alert("updated");
+                 gvLoad();
+
+              }*/
+
+        }
     }
     protected void gvUser_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
@@ -138,38 +194,7 @@ public partial class Teacher_Modify_Student : System.Web.UI.Page
     }
     protected void gvUser_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string status = "Active";
-        string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-        using (SqlConnection con = new SqlConnection(cs))
-        {
-            con.Open();
+        
 
-            SqlCommand cmdinsert = new SqlCommand();
-            cmdinsert.Connection = con;
-            cmdinsert.CommandText = "insert into tblStudent values(@Student_Id, @Name, @Password,@Semester,@Roll_No,@Gender, @DOB, @Mobile, @Email,@Address,@Status)";
-            cmdinsert.Parameters.AddWithValue("@Student_Id", student_id);
-            cmdinsert.Parameters.AddWithValue("@Name", name);
-            cmdinsert.Parameters.AddWithValue("@Password", password);
-            cmdinsert.Parameters.AddWithValue("@Semester", semester);
-            cmdinsert.Parameters.AddWithValue("@Roll_No", roll);
-            cmdinsert.Parameters.AddWithValue("@Gender", gender);
-            cmdinsert.Parameters.AddWithValue("@DOB", dob);
-
-
-            cmdinsert.Parameters.AddWithValue("@Mobile", mobile);
-            cmdinsert.Parameters.AddWithValue("@Email", email);
-
-            cmdinsert.Parameters.AddWithValue("@Address", address);
-            cmdinsert.Parameters.AddWithValue("@Status", status);
-            cmdinsert.ExecuteNonQuery();
-
-            Response.Redirect("/College_Department_Management_System/Student/Reg_Message.aspx");
-
-            con.Close();
-
-
-
-
-        }
-    }
 }
+    }

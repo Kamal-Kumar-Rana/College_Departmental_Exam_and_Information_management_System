@@ -13,7 +13,12 @@ public partial class Teacher_Add_Student : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["ywivreqi"] != null)
+        {
+            lblId.Text = Session["ywivreqi"].ToString();
+            lblName.Text = Session["name"].ToString();
 
+        }
     }
     protected void btnRegister_Click(object sender, EventArgs e)
     {

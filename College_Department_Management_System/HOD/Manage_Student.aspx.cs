@@ -12,7 +12,12 @@ public partial class Admin_Manage_Student : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["ywivreqi"] != null)
+        {
+            lblId.Text = Session["ywivreqi"].ToString();
+            lblName.Text = Session["name"].ToString();
 
+        }
     }
   
   

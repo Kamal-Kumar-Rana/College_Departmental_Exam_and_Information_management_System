@@ -32,6 +32,7 @@ public partial class Student_Notice : System.Web.UI.Page
             da.SelectCommand = cmd;
             da.Fill(dt);
         }
+        
         StringBuilder updatehtml = new StringBuilder();
         updatehtml.Append("<ul>");
         if (dt.Rows.Count > 0)
