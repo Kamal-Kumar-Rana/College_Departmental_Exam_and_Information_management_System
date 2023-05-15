@@ -39,16 +39,15 @@ public partial class Student_popup : System.Web.UI.Page
     }
     protected void btnSend_Click(object sender, EventArgs e)
     {
+        
 
-
-        string apikey = "NzA2NDMwNGI1NjMwNTk3ODQ2NTQ1MjU4NmY0ZDU1NmU=";
+        string apikey = "NzA2NDMwNGI1NjMwNTk3ODQ2NTQ1MjU4NmY0ZDU1NmU";
         Random ran = new Random();
         int value = ran.Next(1000, 9999);
         string sendername = "TXTLCL";
         string number = "+91" + txtMobile;
         string message = "Your Otp Number is " + value + " (Send By KamalWorld!)";
-        /*try
-        {
+
             String Message = HttpUtility.UrlEncode(message);
             using (var wb = new WebClient())
             {
@@ -60,15 +59,11 @@ public partial class Student_popup : System.Web.UI.Page
                 {"sender" , sendername}
                 });
                 string result = System.Text.Encoding.UTF8.GetString(response);
-                Session["otp"]=value;
+                Session["otpM"]=value;
             }
         }
-        catch (Exception ex)
-        {    lbl.Visible = true;
-             lbl.Text = "Unable to process your request. Please try again later.";
-            
-        }
-        */
+        
+        /*
         String url = "https://api.textlocal.in/send/?apikey" + apikey + "&number" + number + "&message" + message + "&sendername" + sendername;
 
 
@@ -88,9 +83,15 @@ public partial class Student_popup : System.Web.UI.Page
         {
             lbl.Visible = true;
             lbl.Text = "not send";
-        }*/
+        }
         
-    }
+    }*/
+
+
+
+
+
+    
 
 
     protected void btnEmailSend_Click(object sender, EventArgs e)

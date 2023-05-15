@@ -36,11 +36,11 @@
                     <div id="content">
 
      <div class="gvContainer">
-                            <asp:GridView ID="gvUpdates" CssClass="gv" runat="server" 
+                            <asp:GridView ID="gvUser" CssClass="gv" runat="server" 
                                 AutoGenerateColumns="False" ShowFooter="True"
-                                DataKeyNames="Exam_Id" OnRowCancelingEdit="gvUpdates_RowCancelingEdit" OnRowCommand="gvUpdates_RowCommand"
-                                OnRowDeleting="gvUpdates_RowDeleting" OnRowEditing="gvUpdates_RowEditing" 
-                                OnRowUpdating="gvUpdates_RowUpdating" 
+                                DataKeyNames="Exam_Id" OnRowCancelingEdit="gvUser_RowCancelingEdit" 
+                                OnRowDeleting="gvUser_RowDeleting" OnRowEditing="gvUser_RowEditing" 
+                                OnRowUpdating="gvUser_RowUpdating" 
                                 >
                                 <Columns>
                                     <asp:TemplateField HeaderText="Exam Id" ItemStyle-CssClass="gvitem" HeaderStyle-CssClass="gvheader">

@@ -105,7 +105,7 @@
                                 </label>
                             </div>
                                 <div class="input-box">
-                                <asp:TextBox ID="txtDOB" class="input" TextMode="Date" autocomplete="off" runat="server"
+                                <asp:TextBox ID="txtDOB" class="input"  autocomplete="off" runat="server"
                                     MaxLength="10"></asp:TextBox>
                                 <label for="txtDOB" class="label-name">
                                     <span class="content-name">Date of Birth</span>

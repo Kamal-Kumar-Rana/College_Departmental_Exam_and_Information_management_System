@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
      <h1>Assignment Submission Page</h1>
-    <form action="" method="post" enctype="multipart/form-data">
+    
       <label for="subject">Semester:</label>
       <select id="subject" name="subject">
         <option value="">Please select a semester</option>

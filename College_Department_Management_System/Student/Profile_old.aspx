@@ -8,14 +8,10 @@
     <link href="CSS/Dashboard.css" rel="stylesheet" type="text/css" />
     <link href="../Global/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-    <%
-        string path = HttpContext.Current.Server.MapPath("Link.txt");
-        string content = System.IO.File.ReadAllText(path);
-        Response.Write(content);
-    %>
+  
 </head>
 <body>
-    <form id="dashboard" runat="server">
+    <!--<form id="dashboard" runat="server">
         <asp:ScriptManager ID="scriptPage" runat="server">
         </asp:ScriptManager>
         <asp:UpdateProgress ID="progressUpdate" AssociatedUpdatePanelID="updatePage" runat="server">
@@ -229,11 +225,6 @@
             </ContentTemplate>
         </asp:UpdatePanel>
 
-        <%
-            string footerpath = HttpContext.Current.Server.MapPath("Html/Footer.htm");
-            string footercontent = System.IO.File.ReadAllText(footerpath);
-            Response.Write(footercontent);
-        %>
-    </form>
+    </form>-->
 </body>
 </html>

@@ -48,13 +48,13 @@ public partial class Admin_Manage_Subject : System.Web.UI.Page
 
     protected void gvUser_RowEditing(object sender, GridViewEditEventArgs e)
     {
-        gvUpdates.EditIndex = e.NewEditIndex;
+        gvUser.EditIndex = e.NewEditIndex;
         //btnSearch_Click(sender, e);
-        gvUpdates.EditRowStyle.BackColor = System.Drawing.Color.LightPink;
+        gvUser.EditRowStyle.BackColor = System.Drawing.Color.LightPink;
     }
     protected void gvUser_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
     {
-        gvUpdates.EditIndex = -1;
+        gvUser.EditIndex = -1;
        // btnSearch_Click(sender, e);
        
     }
@@ -64,7 +64,7 @@ public partial class Admin_Manage_Subject : System.Web.UI.Page
         
         string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
         //string status = (gvUser.Rows[e.RowIndex].FindControl("txtEditStatus") as TextBox).Text.Trim();
-        string studentId = gvUpdates.DataKeys[e.RowIndex].Value.ToString();
+        string studentId = gvUser.DataKeys[e.RowIndex].Value.ToString();
         /* using (SqlConnection con = new SqlConnection(cs))
          {
              con.Open();

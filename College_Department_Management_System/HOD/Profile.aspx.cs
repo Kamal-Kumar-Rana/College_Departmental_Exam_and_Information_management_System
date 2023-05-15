@@ -11,8 +11,7 @@ public partial class Admin_Profile : System.Web.UI.Page
     {
         if (Session["ywivreqi"] != null)
         {
-            lblId.Text = Session["ywivreqi"].ToString();
-            lblName.Text = Session["name"].ToString();
+            
 
         }
     }

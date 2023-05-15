@@ -92,7 +92,7 @@
                                         </EditItemTemplate>
                                          <FooterTemplate>
                                             <asp:TextBox ID="txtExamDate" CssClass="gvTextbox" placeholder="DD-MM-yyyy" autocomplete="off" runat="server"
-                                                 Rows="10" MaxLength="500" TextMode="Date"></asp:TextBox>
+                                                 Rows="10" MaxLength="500"  ></asp:TextBox>
                                         </FooterTemplate>
                                         <HeaderStyle CssClass="gvheader"></HeaderStyle>
                                         <ItemStyle CssClass="gvitem"></ItemStyle>
@@ -107,7 +107,7 @@
                                         </EditItemTemplate>
                                          <FooterTemplate>
                                             <asp:TextBox ID="txtStartTime" CssClass="gvTextbox" placeholder="Time" autocomplete="off" runat="server"
-                                                 Rows="10" MaxLength="500" TextMode="Time"></asp:TextBox>
+                                                 Rows="10" MaxLength="500"  ></asp:TextBox>
                                         </FooterTemplate>
                                         <HeaderStyle CssClass="gvheader"></HeaderStyle>
                                         <ItemStyle CssClass="gvitem"></ItemStyle>
@@ -158,6 +158,27 @@
                                      <asp:ListItem Value="BCA-202">BCA-202</asp:ListItem>
                                     <asp:ListItem Value="BCA-301">BCA-301</asp:ListItem>
                                     <asp:ListItem Value="BCA-302">BCA-302</asp:ListItem>
+                                    <asp:ListItem Value="BCA-102">BCA-102</asp:ListItem>
+                                    <asp:ListItem Value="BCA-201">BCA-201</asp:ListItem>
+                                     <asp:ListItem Value="BCA-202">BCA-202</asp:ListItem>
+                                    <asp:ListItem Value="BCA-301">BCA-301</asp:ListItem>
+                                    <asp:ListItem Value="BCA-302">BCA-302</asp:ListItem>
+                                    <asp:ListItem Value="BCA-102">BCA-102</asp:ListItem>
+                                    <asp:ListItem Value="BCA-201">BCA-201</asp:ListItem>
+                                     <asp:ListItem Value="BCA-202">BCA-202</asp:ListItem>
+                                    <asp:ListItem Value="BCA-301">BCA-301</asp:ListItem>
+                                    <asp:ListItem Value="BCA-302">BCA-302</asp:ListItem>
+                                    <asp:ListItem Value="BCA-102">BCA-102</asp:ListItem>
+                                    <asp:ListItem Value="BCA-201">BCA-201</asp:ListItem>
+                                     <asp:ListItem Value="BCA-202">BCA-202</asp:ListItem>
+                                    <asp:ListItem Value="BCA-301">BCA-301</asp:ListItem>
+                                    <asp:ListItem Value="BCA-302">BCA-302</asp:ListItem>
+                                    <asp:ListItem Value="BCA-102">BCA-102</asp:ListItem>
+                                    <asp:ListItem Value="BCA-201">BCA-201</asp:ListItem>
+                                     <asp:ListItem Value="BCA-202">BCA-202</asp:ListItem>
+                                    <asp:ListItem Value="BCA-301">BCA-301</asp:ListItem>
+                                    <asp:ListItem Value="BCA-302">BCA-302</asp:ListItem>
+                                
                                             </asp:DropDownList>
                                         </EditItemTemplate>
                                         <FooterTemplate>

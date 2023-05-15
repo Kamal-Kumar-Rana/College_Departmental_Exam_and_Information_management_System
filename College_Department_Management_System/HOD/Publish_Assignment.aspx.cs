@@ -13,12 +13,11 @@ public partial class Admin_Publish_assignment : System.Web.UI.Page
     {
         if (Session["ywivreqi"] != null)
         {
-            lblId.Text = Session["ywivreqi"].ToString();
-            lblName.Text = Session["name"].ToString();
+           
 
         }
     }
-    protected void btn_Click(object sender, EventArgs e)
+   /* protected void btn_Click(object sender, EventArgs e)
     {
         string id = txtId.Text;
         string name = txtName.Text;
@@ -37,5 +36,5 @@ public partial class Admin_Publish_assignment : System.Web.UI.Page
             con.Close();
 
         }
-    }
+    }*/
 }

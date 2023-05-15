@@ -36,7 +36,7 @@
                                    BorderColor="#0066FF" ForeColor="#0099FF" onclick="btnSend_Click" />
                                                            </div>
                         <div class="input-box">
-                            <asp:TextBox ID="txtOtp" class="input" type="text"  runat="server" required MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txtOtp" class="input" type="text"  runat="server"></asp:TextBox>
                             <label for="txtOtp" class="label-name">
                                 <span class="content-name">Enter OTP</span>
                             </label>
@@ -52,7 +52,7 @@
                                    BorderColor="#0066FF" ForeColor="#0099FF" onclick="btnEmailSend_Click"  />
                                                            </div>
                         <div class="input-box">
-                            <asp:TextBox ID="txtOtpEmail" class="input" type="text"  runat="server" required MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txtOtpEmail" class="input" type="text"  runat="server" ></asp:TextBox>
                             <label for="txtOtp" class="label-name">
                                 <span class="content-name">Enter OTP</span>
                             </label>

@@ -41,7 +41,7 @@
             <ContentTemplate>
                 <asp:Panel ID="passwordUpdatePanel" class="overlay" runat="server" Visible="false">
                     <div class="content">
-                        <div class="header">Update your password<asp:LinkButton ID="linkClose" runat="server" OnClick="linkClose_Click"><i class="fas fa-times"></i></asp:LinkButton></div>
+                        <div class="header">Update your password<asp:LinkButton ID="linkCl2ose" runat="server" OnClick="linkClose_Click"><i class="fas fa-times"></i></asp:LinkButton></div>
                         <div class="input-box">
                             <asp:TextBox ID="txtOldPassword" class="input" type="text" autocomplete="off" runat="server" required MaxLength="20"></asp:TextBox>
                             <label for="txtOldPassword" class="label-name">
